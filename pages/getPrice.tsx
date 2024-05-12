@@ -21,20 +21,15 @@ export default function GetPrice() {
             const ethersProvider = new ethers.providers.Web3Provider(walletProvider);
             const pairContract = new ethers.Contract(pairAddress, pairABIV3, ethersProvider);
             const slot0 = await pairContract.slot0();
-            console.log("🚀 ~ fetchPriceV3 ~ slot0:", slot0);
             const tick = parseInt(slot0.tick);
-            console.log("🚀 ~ fetchPriceV3 ~ tick:", tick);
             const liquidity = parseInt(slot0.liquidity);
-            console.log("🚀 ~ fetchPriceV3 ~ liquidity:", liquidity);
 
             // Calculate the current price based on the tick
             const price = Math.pow(1.0001, tick) * Math.sqrt(liquidity);
 
             const ethToUsdExchangeRate = 3785.88;
             const priceInUSD = price * ethToUsdExchangeRate;
-
-            console.log("🚀 ~ fetchPriceV3 ~ priceInUSD:", priceInUSD);
-            console.log("🚀 ~ fetchPriceV3 ~ price:", price);
+            return priceInUSD
         } catch (error) {
             console.log(error);
         }
@@ -53,7 +48,8 @@ export default function GetPrice() {
 
             // Calculate the price of token1 in terms of token0
             const price = reserve0 / reserve1;
-            console.log("🚀 ~ fetchPrice ~ price:", price);
+
+            return price;
         } catch (error) {
             console.log(error);
         }

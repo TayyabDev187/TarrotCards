@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAppContext } from "../_app";
 
 interface PromptState {
   question: string;
@@ -9,17 +10,15 @@ interface PromptState {
 
 const Reading = () => {
   const navigate = useRouter();
-  const [prompt, setPrompt] = useState<PromptState>({ question: "", card: "" });
+  const { prompt, setPrompt } = useAppContext();
   const [text, setText] = useState("");
   const [isOpen, setOpen] = useState(false);
   function handleSetPrompt() {
     setPrompt({
-      question: text ? text : "",
+      question: text,
       card: "",
     });
   }
-
-  console.log(prompt, text, "DATA");
   const listItems = [
     "Think about it and enter a question in the input field",
     "Pick a card from a deck",
