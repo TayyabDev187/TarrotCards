@@ -36,7 +36,7 @@ export function useAuth() {
                 await setDoc(doc(db, 'users', data?.user?.email ?? ""), {
                     ...user,
                     ...data?.user,
-                    plan: "",
+                    plan: "free",
                     credits: 3
                 })
             }
