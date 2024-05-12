@@ -6,13 +6,13 @@ import { useRouter } from "next/router";
 import React from "react";
 
 function CheckoutPage() {
-  const { push } = useRouter()
+  const router = useRouter()
   const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_PUB_KEY as string
   );
   const { clientSecret } = useStripeContext();
 
-  if (!clientSecret) { push('/') };
+  if (!clientSecret) { if (router) { router.push('/'); }; return; };
   return (
     <Elements stripe={stripePromise} options={{ clientSecret: clientSecret }}>
       <CheckoutForm />
