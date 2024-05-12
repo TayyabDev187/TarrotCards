@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import SelectedCard from '../../components/resultPage/SelectedCard'
 import { useAppContext } from "../_app";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 export default function Result() {
     const { prompt, setPrompt } = useAppContext();
     const [result, setResult] = useState('');
     const [loading, setLoading] = useState(false);
-
 
     async function getAnswer() {
         const { card, question } = prompt;
@@ -24,13 +24,13 @@ export default function Result() {
             if (success) {
                 setResult(result);
             } else {
-                console.error(message);
+                toast.error(message);
             }
 
             setLoading(false);
-        } catch (error) {
+        } catch (error: any) {
             setLoading(false);
-            console.log(error)
+            toast.error(error?.message || error?.response?.data?.message)
         }
 
     }

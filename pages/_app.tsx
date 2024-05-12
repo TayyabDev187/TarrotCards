@@ -1,16 +1,15 @@
 //@ts-nocheck
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { NextUIProvider } from "@nextui-org/react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Header from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { useContext, useEffect, useState, createContext } from "react";
+import { StripeProvider } from "@/context";
+import { NextUIProvider } from "@nextui-org/react";
+import { SessionProvider } from "next-auth/react";
+import type { AppProps } from "next/app";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import { StripeProvider } from "@/context";
-import { SessionProvider } from "next-auth/react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../styles/globals.css";
 
 const AppContext = createContext<any>();
 
@@ -27,6 +26,7 @@ export const useAppContext = () => useContext(AppContext);
 export default function App({ Component, pageProps }: AppProps) {
     const searchParams = useSearchParams();
     const [prompt, setPrompt] = useState<PromptState>({ question: "", card: "" });
+
     const { push } = useRouter();
     useEffect(() => {
         // fetch('/api/webhooks-caller')

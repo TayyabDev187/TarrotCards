@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const [paymentID] = req.body;
 
         try {
-            const stripe = require('stripe')(`${process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY}`);
+            const stripe = require('stripe')(`${process.env.STRIPE_SECRET_KEY}`);
             const paymentIntent = await stripe.paymentIntents.retrieve(
                 paymentID
             );
