@@ -37,7 +37,7 @@ export default function CardOne({ data, setMemory }) {
         position={[1.8, 0, 1]}
         transform
       >
-        <img src="images/knight.jpg" className="w-100" alt="" />
+        <img src="images/king.jpg" className="w-100" alt="" />
       </Html>
     </mesh>
   );
