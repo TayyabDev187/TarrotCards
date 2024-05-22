@@ -13,7 +13,7 @@ import FrontModel from "./FrontModel";
 export default function Banner() {
   return (
     <div>
-      <div className="flex pl-28 bg-[#140f66] py-24 max-md:px-8 max-md:justify-center justify-between item-center">
+      <div className="flex pl-28 bg-[#140f66] py-24 max-md:px-8 overflow-x-hidden max-md:justify-center justify-between item-center">
         <div className="flex flex-col py-12 gap-2 w-[530px]">
           <h3 className="text-[64px] font-bold md:w-[550px] text-white leading-[67.2px] max-md:text-[32px] max-sm:text-[28px] max-md:leading-10 max-sm:leading-10">
             Illuminate Your Path with Lumi Tarot

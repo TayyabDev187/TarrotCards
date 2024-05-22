@@ -1,7 +1,7 @@
 import { Suspense, useRef } from "react"; // Import useRef
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, EnvironmentMap } from "@react-three/drei";
-import CardOne from "./Card";
+import CardModalSingle from "../models/CardModalSingle";
 import { CameraControls } from "@react-three/drei";
 
 const SelectedCard = () => {
@@ -22,7 +22,7 @@ const SelectedCard = () => {
         />
         <EnvironmentMap background="only" />
         <Suspense fallback={null}>
-          <CardOne />
+          <CardModalSingle />
         </Suspense>
       </Canvas>
     </div>

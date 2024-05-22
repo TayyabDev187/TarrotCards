@@ -13,7 +13,7 @@ const FrontModel = () => {
         <CameraControls ref={cameraControlRef} />
         <ambientLight intensity={2} />
         <OrbitControls
-          enableZoom={true}
+          enableZoom={false}
           enablePan={true}
           minDistance={30}
           maxDistance={45}
