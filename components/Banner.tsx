@@ -9,11 +9,14 @@ import FifthCard from "./sections/FifthCard";
 import ThirdCard from "./sections/ThirdCard";
 import Footer from "./Footer";
 import FrontModel from "./FrontModel";
+import { useRouter } from "next/router";
 
 export default function Banner() {
+  const router = useRouter();
+
   return (
     <div>
-      <div className="flex pl-28 bg-[#140f66] py-24 max-md:px-8 overflow-x-hidden max-md:justify-center justify-between item-center">
+      <div className="flex pl-28 bg-[#140f66] max-md:flex-wrap max-lg:flex-wrap  max-sm:flex-wrap py-24 max-md:px-8 overflow-x-hidden max-md:justify-center justify-between item-center">
         <div className="flex flex-col py-12 gap-2 w-[530px]">
           <h3 className="text-[64px] font-bold md:w-[550px] text-white leading-[67.2px] max-md:text-[32px] max-sm:text-[28px] max-md:leading-10 max-sm:leading-10">
             Illuminate Your Path with Lumi Tarot
@@ -24,7 +27,7 @@ export default function Banner() {
             you.
           </p>
           <div className="flex gap-4 mt-4 max-sm:flex-wrap">
-            <button className="btn-142">
+            <button className="btn-142" onClick={()=> router.push("/configuration")}>
               <span>Get Started</span>
             </button>
             <Button className="px-10 py-6 border-2 border-purple-500 rounded-lg bg-transparent">
@@ -32,7 +35,7 @@ export default function Banner() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col relative max-lg:hidden w-full items-end">
+        <div className="flex flex-col w-full  items-end">
           <div
             className="w-full h-full flex mb-10"
             style={{

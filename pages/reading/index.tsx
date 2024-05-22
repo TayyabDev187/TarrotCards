@@ -47,7 +47,7 @@ const Reading = () => {
   }
 
   return (
-    <div className="bg-[#121212] flex justify-center items-center w-full h-screen">
+    <div className="bg-[#121212] flex justify-center items-center w-full h-screen px-10">
       <div className="border-1 bg-black rounded-md border-blue-900 py-10 px-10">
         {!isOpen ? (
           <div>

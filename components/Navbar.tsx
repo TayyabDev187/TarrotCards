@@ -40,10 +40,10 @@ export default function Header() {
 
 
   return (
-    <div
-      className={`flex flex-col w-full z-10 ${isSticky ? "fixed transition" : "fixed"
-        }`}
-    >
+    <div className="flex flex-col w-full">
+    {/* //   className={`flex flex-col w-full "z-10 ${isSticky ? "fixed transition" : "fixed"
+    //     }`}
+    // >" */}
 
       <div className="4xl1:flex 4xl1:justify-center 4xl1:items-center">
         <div className="4xl1:w-[1440px]">
