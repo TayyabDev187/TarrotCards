@@ -15,7 +15,7 @@ export default function CardOne({ data, setMemory }) {
       scale={[size * 20.3, 10.4, 0.2]}
       rotation={[0, 0, 0]}
       ref={ref}
-      position={[-6, 2.7, 5.2]}
+      position={[0, 2.7, 5.2]}
     >
       <boxGeometry />
       <meshStandardMaterial transparent opacity={0} />

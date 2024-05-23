@@ -32,8 +32,8 @@ export default function Model(props) {
         onClick={(e) => {
           handleCard(
             "TheMagician",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
+            nodes["1_The_Magician"].geometry,
+            materials["1_The_Magician"]
           );
         }}
         geometry={nodes["1_The_Magician"].geometry}
