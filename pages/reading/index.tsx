@@ -13,7 +13,7 @@ interface PromptState {
 
 const Reading = () => {
   const navigate = useRouter();
-  const { status } = useSession()
+  const { status } = useSession();
   const { setPrompt } = useAppContext();
   const { user, updateUser } = useAuth();
   const [text, setText] = useState("");
@@ -23,6 +23,7 @@ const Reading = () => {
       question: text,
       card: "",
     });
+    navigate.push("/pricing");
   }
   const listItems = [
     "Think about it and enter a question in the input field",
@@ -30,21 +31,23 @@ const Reading = () => {
     "Get an answer to the entered question from the card that you got",
     "You can shuffle and ask a new question or save the results of the session.",
   ];
-
   async function checkAndOpen() {
-    if (user?.plan === 'free' && user?.credits > 0) {
-      await updateUser({
-        credits: user?.credits - 1
-      });
-      setOpen(true);
-    } else if (!user?.plan) {
-      navigate.push('/pricing')
-    } else if (user?.plan === 'pro' || user?.plan === 'enterprise') {
-      setOpen(true);
-    } else {
-      toast.error('Free trial ended!')
-    }
+    setOpen(true);
   }
+  // async function checkAndOpen() {
+  //   if (user?.plan === "free" && user?.credits > 0) {
+  //     await updateUser({
+  //       credits: user?.credits - 1,
+  //     });
+  //     setOpen(true);
+  //   } else if (!user?.plan) {
+  //     navigate.push("/pricing");
+  //   } else if (user?.plan === "pro" || user?.plan === "enterprise") {
+  //     setOpen(true);
+  //   } else {
+  //     toast.error("Free trial ended!");
+  //   }
+  // }
 
   return (
     <div className="bg-[#121212] flex justify-center items-center w-full h-screen px-10">
@@ -64,7 +67,8 @@ const Reading = () => {
             <div className="flex justify-center items-center">
               <Button
                 className="bg-[#7557fa] text-[white] font-semibold rounded-md px-6 py-2"
-                onClick={() => status === 'authenticated' ? checkAndOpen() : signIn()}
+                // onClick={() => status === 'authenticated' ? checkAndOpen() : signIn()}
+                onClick={() => checkAndOpen()}
               >
                 Got it!
               </Button>
