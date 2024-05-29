@@ -12,30 +12,32 @@ const Profile = () => {
   const [user, setUser] = useState<any>({});
   const { status, data } = useSession();
 
-  async function getUser() {
-    try {
-      let newUser = null;
-      newUser = await getDoc(doc(db, "users", data?.user?.email ?? ""));
-
-      newUser = await getDoc(doc(db, "users", data?.user?.email ?? ""));
-      setUser({ ...newUser.data(), id: newUser.id });
-    } catch (error: any) {
-      toast.error(error.message);
-    }
-  }
-
-  const handleSignOut = async () => {
-    await signOut();
-    router.push('/'); // Redirect to login page after signing out
-  };
-
   useEffect(() => {
     if (status === "authenticated") {
       getUser();
-    } 
+    } else if (status === "unauthenticated") {
+      router.push('/'); // Redirect to login page if not authenticated
+    }
   }, [status]);
 
-  console.log(user);
+  const getUser = async () => {
+    try {
+      if (data?.user?.email) {
+        const newUser = await getDoc(doc(db, "users", data.user.email));
+        if (newUser.exists()) {
+          setUser({ ...newUser.data(), id: newUser.id });
+        } else {
+          toast.error("User data not found");
+        }
+      }
+    } catch (error: any) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
 
   return (
     <div
@@ -49,10 +51,10 @@ const Profile = () => {
     >
       <div className="flex flex-col">
         <h1 className="text-[42px] font-bold text-[#0c104e]">
-       Readings
+          Readings
         </h1>
         <div className="flex justify-start pl-0">
-        <RecentModal />
+          <RecentModal />
         </div>
       </div>
 
@@ -66,17 +68,17 @@ const Profile = () => {
             {user?.id?.slice(0, 8)}...
           </span>
         </div>
-        <div className="flex gap-2 mb-4 cursor-pointer" onClick={()=> router.push("/reading")}>
+        <div className="flex gap-2 mb-4 cursor-pointer" onClick={() => router.push("/reading")}>
           <span className="text-xl text-[#0c104e] font-semibold">
             Reading
           </span>
         </div>
-        <div className="flex gap-2 mb-4 cursor-pointer" onClick={()=> router.push("/blog")}>
+        <div className="flex gap-2 mb-4 cursor-pointer" onClick={() => router.push("/blog")}>
           <span className="text-xl text-[#0c104e] font-semibold">
             Blog
           </span>
         </div>
-        <div className="flex gap-2 mb-4 cursor-pointer" onClick={()=> router.push("/pricing")}>
+        <div className="flex gap-2 mb-4 cursor-pointer" onClick={() => router.push("/pricing")}>
           <span className="text-xl text-[#0c104e] font-semibold">
             Pricing
           </span>
@@ -84,7 +86,9 @@ const Profile = () => {
         <Button
           className="text-lg text-[#0c104e] font-semibold"
           onClick={handleSignOut}
-        >Sign Out</Button>
+        >
+          Sign Out
+        </Button>
       </div>
     </div>
   );

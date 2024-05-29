@@ -74,7 +74,7 @@ const Pricing = () => {
             </span>
           </div>
         </div>
-        <Button disabled={user?.plan === 'free'} onClick={() => updatePlan('free')} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
+        <Button disabled={user?.plan === 'free'} onClick={() => {updatePlan('free'), router.push("/profile")}} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
           {user?.plan === 'free' ? "Choosen" : "Choose"}
         </Button>
       </div>
@@ -119,7 +119,7 @@ const Pricing = () => {
             </span>
           </div>
         </div>
-        <Button disabled={user?.plan === 'pro'} onClick={() => updatePlan('pro')} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
+        <Button disabled={user?.plan === 'pro'} onClick={() => {updatePlan('pro'), router.push("/profile")}} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
           {user?.plan === 'pro' ? "Choosen" : "Choose"}
         </Button>
       </div>
@@ -172,7 +172,7 @@ const Pricing = () => {
             </span>
           </div>
         </div>
-        <Button disabled={user?.plan === 'enterprise'} onClick={() => updatePlan('enterprise')} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
+        <Button disabled={user?.plan === 'enterprise'} onClick={() => {updatePlan('enterprise'), router.push("/profile")}} className="disabled:cursor-not-allowed rounded-lg mt-10 text-lg bg-[#fff5fa] text-[#ff1d89] hover:bg-[#ff1d89] hover:text-[#FFFF]">
           {user?.plan === 'enterprise' ? "Choosen" : "Choose"}
         </Button>
       </div>
