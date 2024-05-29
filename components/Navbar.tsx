@@ -11,9 +11,10 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 import { PiSignIn } from "react-icons/pi";
+import { CiUser } from "react-icons/ci";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,6 @@ export default function Header() {
   const { data, status } = useSession();
   const menuItems = [
     { id: "/reading", label: "Reading" },
-    { id: "/contact", label: "Contact" },
     { id: "/blog", label: "Blog" },
     { id: "/pricing", label: "Pricing" },
   ];
@@ -38,8 +38,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isProfileRoute = router.pathname === "/profile";
 
   return (
+    <div>
+    {!isProfileRoute && (
     <div className="flex flex-col w-full">
     {/* //   className={`flex flex-col w-full "z-10 ${isSticky ? "fixed transition" : "fixed"
     //     }`}
@@ -83,13 +86,14 @@ export default function Header() {
                 >
                   <button className="flex justify-center gap-1" onClick={() => {
                     if (status === 'authenticated') {
-                      signOut()
+                      router.push("/profile");
                     } else {
                       signIn()
                     }
                   }}>
-                    <PiSignIn className="mt-1.5 " />
-                    {status === 'authenticated' ? 'Sign out' : "Sign in"}
+                    {status === 'authenticated' ? <CiUser className="mt-1.5 " /> :
+                    <PiSignIn className="mt-1.5 " />}
+                    {status === 'authenticated' ? 'Profile' : "Sign in"}
                   </button>
                 </div>
               </NavbarItem>
@@ -118,6 +122,8 @@ export default function Header() {
 
         </div>
       </div>
+      </div>
+    )}
     </div>
   );
 }

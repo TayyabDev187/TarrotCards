@@ -1,10 +1,12 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleAuthProvider from "next-auth/providers/google";
+
 
 export default NextAuth({
   callbacks: {
-    session({ session }) {
-      return session // The return type will match the one returned in `useSession()`
+    async session({ session }) {
+      return session;
     },
   },
   providers: [
@@ -19,10 +21,13 @@ export default NextAuth({
           ...credentials,
           id: credentials?.username ?? "",
           email: credentials?.username ?? "",
-        }
+        };
       }
+    }),
+    GoogleAuthProvider({
+      clientId: process.env.GOOGLE_ID || "",
+      clientSecret: process.env.GOOGLE_SECRET || "",
     })
-
   ],
   secret: process.env.NEXTAUTH_SECRET || "QfFAIT7JTnNOPXSl9+7A5Bc4OrzZnHlXAGNjX0JDEOw="
-})
+});

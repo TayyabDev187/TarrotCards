@@ -47,6 +47,8 @@ export function useAuth() {
         }
     }
 
+    console.log(user)
+
     useEffect(() => {
         if (status === 'authenticated') {
             getUser()
