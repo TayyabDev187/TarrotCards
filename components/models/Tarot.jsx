@@ -8,8 +8,8 @@ export default function Model(props) {
   const { setPrompt } = useAppContext();
   const router = useRouter();
 
-  function handleCard(value, geometry, material) {
-    setPrompt((prev) => ({ ...prev, card: value, material, geometry }));
+  function handleCard(value, image) {
+    setPrompt((prev) => ({ ...prev, card: value, image }));
     router.push("/result");
   }
   const ref = useRef();
@@ -18,11 +18,7 @@ export default function Model(props) {
     <group {...props} position={[-30, -60, 5]} ref={ref} dispose={null}>
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool_1"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheFool", "0-The_Fool.jpg");
         }}
         geometry={nodes["0_The_Fool_1"].geometry}
         material={materials.Back}
@@ -30,770 +26,490 @@ export default function Model(props) {
       <mesh geometry={nodes["0_The_Fool"].geometry} material={materials.Back} />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheMagician",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheMagician", "1-TheMagician.jpg");
         }}
         geometry={nodes["1_The_Magician"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheHighPriestess",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheHighPriestess", "2-TheHighPriestess.jpg");
         }}
         geometry={nodes["2_The_High_Priestess"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheEmpress",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheEmpress", "3-TheEmpress.jpg");
         }}
         geometry={nodes["3_The_Empress"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheEmperor",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheEmperor", "4-TheEmperor.jpg");
         }}
         geometry={nodes["4_The_Emperor"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheHierophant",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheHierophant", "5-TheHierophant.jpg");
         }}
         geometry={nodes["5_The_Hierophant"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheLovers",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheLovers", "6-TheLovers.jpg");
         }}
         geometry={nodes["6_The_Lovers"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheChariot",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheChariot", "7-TheChariot.jpg");
         }}
         geometry={nodes["7_The_Chariot"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Strength",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Strength", "8-Strength.jpg");
         }}
         geometry={nodes["8_Strength"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheHermit",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheHermit", "9-TheHermit.jpg");
         }}
         geometry={nodes["9_The_Hermit"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wheel Of Fortun",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("WheelOfFortune", "10-WheelOfFortune.jpg");
         }}
         geometry={nodes["10_Wheel_of_Fortune"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Justice",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Justice", "11-Justice.jpg");
         }}
         geometry={nodes["11_Justice"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheHangedMan",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheHangedMan", "12-TheHangedMan.jpg");
         }}
         geometry={nodes["12_The_Hanged_Man"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Death",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Death", "13-Death.jpg");
         }}
         geometry={nodes["13_Death"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Temperance",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Temperance", "14-Temperance.jpg");
         }}
         geometry={nodes["14_Temperance"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheDevil",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheDevil", "15-TheDevil.jpg");
         }}
         geometry={nodes["15_The_Devil"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheTower",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheTower", "16-TheTower.jpg");
         }}
         geometry={nodes["16_The_Tower"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheStar",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheStar", "17-TheStar.jpg");
         }}
         geometry={nodes["17_The_Star"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheMoon",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheMoon", "18-TheMoon.jpg");
         }}
         geometry={nodes["18_The_Moon"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheSun",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheSun", "19-TheSun.jpg");
         }}
         geometry={nodes["19_The_Sun"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Judgement",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Judgement", "20-Judgement.jpg");
         }}
         geometry={nodes["20_Judgement"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "TheWorld",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("TheWorld", "21-TheWorld.jpg");
         }}
         geometry={nodes["21_The_World"].geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-King",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups1", "Cups01.jpg");
         }}
         geometry={nodes.Wands_King.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-Queen",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups2", "Cups02.jpg");
         }}
         geometry={nodes.Wands_Queen.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-Knight",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups3", "Cups03.jpg");
         }}
         geometry={nodes.Wands_Knight.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-Page",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups4", "Cups04.jpg");
         }}
         geometry={nodes.Wands_Page.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-Ace",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups5", "Cups05.jpg");
         }}
         geometry={nodes.Wands_Ace.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-2",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups6", "Cups06.jpg");
         }}
         geometry={nodes.Wands_2.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-3",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups7", "Cups07.jpg");
         }}
         geometry={nodes.Wands_3.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-4",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups8", "Cups08.jpg");
         }}
         geometry={nodes.Wands_4.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-5",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups9", "Cups09.jpg");
         }}
         geometry={nodes.Wands_5.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-6",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups10", "Cups10.jpg");
         }}
         geometry={nodes.Wands_6.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-7",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups11", "Cups11.jpg");
         }}
         geometry={nodes.Wands_7.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-8",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups12", "Cups12.jpg");
         }}
         geometry={nodes.Wands_8.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-9",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups13", "Cups13.jpg");
         }}
         geometry={nodes.Wands_9.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Wands-10",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Cups14", "Cups14.jpg");
         }}
         geometry={nodes.Wands_10.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles1", "Pentacles01.jpg");
         }}
         geometry={nodes.Cups_King.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles2", "Pentacles02.jpg");
         }}
         geometry={nodes.Cups_Queen.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles3", "Pentacles03.jpg");
         }}
         geometry={nodes.Cups_Knight.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles4", "Pentacles04.jpg");
         }}
         geometry={nodes.Cups_Page.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "The_Fool",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles5", "Pentacles05.jpg");
         }}
         geometry={nodes.Cups_Ace.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-2",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles6", "Pentacles06.jpg");
         }}
         geometry={nodes.Cups_2.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-3",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles7", "Pentacles07.jpg");
         }}
         geometry={nodes.Cups_3.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-4",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles8", "Pentacles08.jpg");
         }}
         geometry={nodes.Cups_4.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-5",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles9", "Pentacles09.jpg");
         }}
         geometry={nodes.Cups_5.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-6",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles10", "Pentacles10.jpg");
         }}
         geometry={nodes.Cups_6.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-7",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles11", "Pentacles11.jpg");
         }}
         geometry={nodes.Cups_7.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-8",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles12", "Pentacles12.jpg");
         }}
         geometry={nodes.Cups_8.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-9",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles13", "Pentacles13.jpg");
         }}
         geometry={nodes.Cups_9.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Cups-10",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Pentacles14", "Pentacles14.jpg");
         }}
         geometry={nodes.Cups_10.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-king",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords1", "Swords01.jpg");
         }}
         geometry={nodes.Swords_King.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-Queen",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords2", "Swords02.jpg");
         }}
         geometry={nodes.Swords_Queen.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-Knight",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords3", "Swords03.jpg");
         }}
         geometry={nodes.Swords_Knight.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-Page",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords4", "Swords04.jpg");
         }}
         geometry={nodes.Swords_Page.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-Ace",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords5", "Swords05.jpg");
         }}
         geometry={nodes.Swords_Ace.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-2",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords6", "Swords06.jpg");
         }}
         geometry={nodes.Swords_2.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-3",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords7", "Swords07.jpg");
         }}
         geometry={nodes.Swords_3.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-4",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords8", "Swords08.jpg");
         }}
         geometry={nodes.Swords_4.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-5",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords9", "Swords09.jpg");
         }}
         geometry={nodes.Swords_5.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-6",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords10", "Swords10.jpg");
         }}
         geometry={nodes.Swords_6.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-7",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords11", "Swords11.jpg");
         }}
         geometry={nodes.Swords_7.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-8",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords12", "Swords12.jpg");
         }}
         geometry={nodes.Swords_8.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-9",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords13", "Swords13.jpg");
         }}
         geometry={nodes.Swords_9.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Swords-10",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Swords14", "Swords14.jpg");
         }}
         geometry={nodes.Swords_10.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-King",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands1", "Wands01.jpg");
         }}
         geometry={nodes.Pentacles_King.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-Queen",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands2", "Wands02.jpg");
         }}
         geometry={nodes.Pentacles_Queen.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-Knight",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands3", "Wands03.jpg");
         }}
         geometry={nodes.Pentacles_Knight.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-Page",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands4", "Wands04.jpg");
         }}
         geometry={nodes.Pentacles_Page.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-Ace",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands5", "Wands05.jpg");
         }}
         geometry={nodes.Pentacles_Ace.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-2",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands6", "Wands06.jpg");
         }}
         geometry={nodes.Pentacles_2.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-3",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands7", "Wands07.jpg");
         }}
         geometry={nodes.Pentacles_3.geometry}
         material={materials.Back}
@@ -801,11 +517,7 @@ export default function Model(props) {
       <mesh geometry={nodes.Pentacles_4.geometry} material={materials.Back} />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-4",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands8", "Wands08.jpg");
         }}
         geometry={nodes.Pentacles_4_1.geometry}
         material={materials.Back}
@@ -813,66 +525,42 @@ export default function Model(props) {
       <mesh geometry={nodes.Pentacles_4_2.geometry} material={materials.Side} />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-5",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands9", "Wands09.jpg");
         }}
         geometry={nodes.Pentacles_5.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-6",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands10", "Wands10.jpg");
         }}
         geometry={nodes.Pentacles_6.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-7",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands11", "Wands11.jpg");
         }}
         geometry={nodes.Pentacles_7.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-8",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands12", "Wands12.jpg");
         }}
         geometry={nodes.Pentacles_8.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-9",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands13", "Wands13.jpg");
         }}
         geometry={nodes.Pentacles_9.geometry}
         material={materials.Back}
       />
       <mesh
         onClick={(e) => {
-          handleCard(
-            "Pentacles-10",
-            nodes["0_The_Fool"].geometry,
-            materials["0-TheFool"]
-          );
+          handleCard("Wands14", "Wands14.jpg");
         }}
         geometry={nodes.Pentacles_10.geometry}
         material={materials.Back}

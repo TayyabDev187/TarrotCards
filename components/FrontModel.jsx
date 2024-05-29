@@ -9,14 +9,16 @@ const FrontModel = () => {
 
   return (
     <div className="px-20 w-full">
-      <Canvas>
+      <Canvas camera={{ position: [-16, 10, -15] }}>
         <CameraControls ref={cameraControlRef} />
         <ambientLight intensity={2} />
         <OrbitControls
           enableZoom={false}
-          enablePan={true}
-          minDistance={30}
-          maxDistance={45}
+          enablePan={false}
+          minDistance={20}
+          maxDistance={35}
+          minPolarAngle={(Math.PI * 5.2) / 12}
+          maxPolarAngle={(Math.PI * 5.5) / 12}
           minAzimuthAngle={-Math.PI / 10} // -90 degrees
           maxAzimuthAngle={Math.PI / 10} // 90 degrees
         />
